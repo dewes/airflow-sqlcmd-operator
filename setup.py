@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
     name = 'airflow-sqlcmd-operator',         
-    packages = ['airflow-sqlcmd-operator'],   
+    packages = ['airflow_sqlcmd_operator'],   
     version = '0.1',      
     license='MIT',        
     description = 'Custom Airflow BashOperator for Microsoft sqlcmd',   
