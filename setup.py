@@ -1,10 +1,20 @@
-from distutils.core import setup
+import pathlib
+from setuptools import setup
+
+# The directory containing this file
+HERE = pathlib.Path(__file__).parent
+
+# The text of the README file
+README = (HERE / "README.md").read_text()
+
 setup(
     name = 'airflow-sqlcmd-operator',         
     packages = ['airflow_sqlcmd_operator'],   
-    version = '0.2',      
+    version = '0.3.0',      
     license='MIT',        
-    description = 'Custom Airflow BashOperator for Microsoft sqlcmd',   
+    description = 'Custom Airflow BashOperator for Microsoft sqlcmd',
+    long_description=README,
+    long_description_content_type="text/markdown",
     author = 'Rodrigo Dewes',                   
     author_email = 'rdewes@gmail.com',      
     url = 'https://github.com/dewes/airflow-sqlcmd-operator',   
