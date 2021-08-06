@@ -8,10 +8,10 @@ setup(
     author = 'Rodrigo Dewes',                   
     author_email = 'rdewes@gmail.com',      
     url = 'https://github.com/dewes/airflow-sqlcmd-operator',   
-    download_url = 'https://github.com/dewes/airflow-sqlcmd-operator/archive/refs/tags/v_02.tar.gz',    # I explain this later on
+    download_url = 'https://github.com/dewes/airflow-sqlcmd-operator/archive/refs/tags/v_02.tar.gz',
     keywords = ['Airflow', 'operator', 'SQLServer', 'sqlcmd'],   
     install_requires=[
-            'apache-airflow',            
+            'apache-airflow>=2.1',            
         ],
     classifiers=[
     'Development Status :: 3 - Alpha',      
