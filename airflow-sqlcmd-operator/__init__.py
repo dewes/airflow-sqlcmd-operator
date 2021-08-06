@@ -1,1 +1,0 @@
-from sqlcmd_operator.sqlcmd import SqlcmdOperator
