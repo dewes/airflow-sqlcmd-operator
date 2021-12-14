@@ -21,6 +21,7 @@ setup(
     download_url = 'https://github.com/dewes/airflow-sqlcmd-operator/archive/refs/tags/v_03.tar.gz',
     keywords = ['Airflow', 'operator', 'SQLServer', 'sqlcmd'],   
     install_requires=[
+            'pathlib',
             'apache-airflow>=2.1',            
         ],
     classifiers=[
