@@ -13,18 +13,18 @@ class SqlcmdOperator(BashOperator):
     sql_command = "/opt/mssql-tools/bin/sqlcmd -b -C -S {{ params.host }} -U {{ params.login }} -P {{ params.password }} -i {{ params.file }} "
 
     @apply_defaults
-    def __init__(self, task_id, mssql_conn_id, sql_folder, sql_file, *args, **kwargs):
+    def __init__(self, *, mssql_conn_id, sql_folder, sql_file, **kwargs):
+
+        super().__init__(**kwargs)
 
         db = BaseHook.get_connection(mssql_conn_id)
 
-        params = {
+        self.params = {
             "host": db.host,
             "login": db.login,
             "password": db.password,
             "file": self.sql_script_path(sql_folder, sql_file),
         }
-
-        super(SqlcmdOperator, self).__init__(task_id, bash_command=self.sql_command, params=params, *args, **kwargs)
 
     def sql_script_path(self, sql_folder, sql_file):
         """Returns the corrected file path with quotation marks."""
