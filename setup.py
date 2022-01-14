@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name="airflow-sqlcmd-operator",
     packages=["airflow_sqlcmd_operator"],
-    version="0.4.2",
+    version="0.4.3",
     license="MIT",
     description="Custom Airflow BashOperator for Microsoft sqlcmd",
     long_description=README,

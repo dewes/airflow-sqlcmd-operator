@@ -15,7 +15,7 @@ class SqlcmdOperator(BashOperator):
     @apply_defaults
     def __init__(self, *, mssql_conn_id, sql_folder, sql_file, **kwargs):
 
-        super().__init__(**kwargs)
+        super().__init__(bash_command=self.sql_command, **kwargs)
 
         db = BaseHook.get_connection(mssql_conn_id)
 
