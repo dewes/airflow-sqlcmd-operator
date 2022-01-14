@@ -24,7 +24,10 @@ class SqlcmdOperator(BashOperator):
             "file": self.sql_script_path(sql_folder, sql_file),
         }
 
-        super().__init__(bash_command=self.sql_command, params=params, **kwargs)
+        super(SqlcmdOperator, self).__init__(bash_command=self.sql_command, params=params, **kwargs)
+        self.mssql_conn_id = mssql_conn_id
+        self.sql_folder = sql_folder
+        self.sql_file = sql_file
 
     def sql_script_path(self, sql_folder, sql_file):
         """Returns the corrected file path with quotation marks."""
